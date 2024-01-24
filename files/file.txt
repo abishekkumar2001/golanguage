@@ -1,1 +1,0 @@
-Hello This program demonstrates reading and writing operations to a file in Go lang.
