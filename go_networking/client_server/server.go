@@ -10,7 +10,7 @@ func handleConnection(conn net.Conn) {
 
 	buffer := make([]byte, 1024)
 	for {
-		//Read data from the connection
+		// Read data from the connection
 		n, err := conn.Read(buffer)
 		if err != nil {
 			fmt.Println("Error reading:", err)
@@ -20,7 +20,7 @@ func handleConnection(conn net.Conn) {
 		data := buffer[:n]
 		fmt.Printf("Received data: %s\n", data)
 
-		//Echo the data back to the client
+		// Echo the data back to the client
 		_, err = conn.Write(data)
 		if err != nil {
 			fmt.Println("Error writing:", err)
@@ -40,14 +40,14 @@ func main() {
 	fmt.Println("Server listening on localhost:8080")
 
 	for {
-		//Accept a connection from a client
+		// Accept a connection from a client
 		conn, err := listener.Accept()
 		if err != nil {
 			fmt.Println("Error accepting connection:", err)
 			continue
 		}
-
-		//Handle the connection in a separate goroutine
+		
+		// Handle the connection in a separate goroutine
 		go handleConnection(conn)
 	}
 }
