@@ -13,8 +13,17 @@ func TestAdd(t *testing.T) { //The function signature must be like this only.
 	want := 10
 
 	if got != want {
-		t.Errorf("got %q, wanted %q", got, want)
+		t.Errorf("got %d, wanted %d", got, want)
 	}
+
+	received := Subtract(6,4)
+	ans :=2
+	
+	if received != ans {
+		t.Errorf("Received %d, ans %d",received,ans)
+	}
+
+	//To run testing  1. go mod init example.com/<package name> here testing is the package name 2.go mod tidy 3. go test
 
 }
 
